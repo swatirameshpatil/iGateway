@@ -24,7 +24,7 @@ public class MerchantController {
     public ResponseEntity<Merchant> addMerchant(@RequestBody Merchant merchant){
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(mService.saveMerchant(merchant));
     }
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Optional<Merchant>> getMerchant(@PathVariable() String id){
         return ResponseEntity.ok(mService.getMerchant(Long.parseLong(id)));
     }
